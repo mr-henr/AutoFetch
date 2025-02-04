@@ -36,7 +36,7 @@ Para obter suporte ou enviar feedback, entre em contato pelo email: meirafhenriq
 
 ## Observação Importante
 
-Esta versão do programa é apenas uma simulação feita com um site simulado! O programa com código original fica apenas com o cliente, pois acessa um sistema específico da empresa onde apenas com as credenciais dos funcionários pode-se acessar.
+Esta versão do programa é apenas uma simulação do processo realizado pelo programa original, pode utilizar qualquer Login e Senha! O programa com código original fica apenas com o cliente, pois acessa um sistema específico da empresa onde apenas com as credenciais dos funcionários pode-se acessar.
 
 Site feito exclusivamente para simulação do sistema original ( https://simulador-autofetch.netlify.app )
 
