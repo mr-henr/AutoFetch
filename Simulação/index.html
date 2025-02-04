@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador XML AutoFetch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        input, select, button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 80%;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulação do XML AutoFetch</h1>
+        <form id="loginForm">
+            <label for="username">Login:</label>
+            <input type="text" id="username" placeholder="Digite seu login" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" placeholder="Digite sua senha" required>
+            
+            <button type="submit">Login</button>
+        </form>
+
+        <div id="selecionarEmpresa" class="hidden">
+            <h2>Bem-vindo ao Truecloud</h2>
+            <p>Selecione a organização desejada:</p>
+            <select id="empresaSelect">
+                <option value="1">GitHub LTDA</option>
+                <option value="2">AutoTech S.A</option>
+                <option value="3">FitLife CIA</option>
+            </select>
+            <button id="continuarEmpresa">Continuar</button>
+        </div>
+
+        <div id="menuPrincipal" class="hidden">
+            <h2>Empresa Selecionada</h2>
+            <p>Escolha uma opção:</p>
+            <button id="estoque">Estoque</button>
+            <button>Clientes</button>
+            <button>Produtos</button>
+            <button>Receitas</button>
+            <button>Despesas</button>
+        </div>
+
+        <div id="estoqueOpcoes" class="hidden">
+            <h2>Opções de Estoque</h2>
+            <button id="baixarXMLPage">Download XML's</button>
+            <button>Download Receitas</button>
+            <button>Downlaod Fornecimentos</button>
+        </div>
+
+        <div id="baixarXMLPageView" class="hidden">
+            <h2>Baixar XML</h2>
+            <label>Mês Referência:</label>
+            <select>
+                <option>Janeiro</option>
+                <option>Fevereiro</option>
+                <option>Março</option>
+                <option>Abril</option>
+                <option>Maio</option>
+                <option>Junho</option>
+                <option>Julho</option>
+                <option>Agosto</option>
+                <option>Setembro</option>
+                <option>Outubro</option>
+                <option>Novembro</option>
+                <option>Dezembro</option>
+            </select>
+            <label>Ano:</label>
+            <select>
+                <option>2025</option>
+                <option>2024</option>
+                <option>2023</option>
+            </select>
+            <a href="https://drive.usercontent.google.com/download?id=1JesFTYkGSDXYdBil3ZMVKH2Yn0vNBoXn&export=download&authuser=0&confirm=t&uuid=651518f9-fad1-4571-b531-1f757e6a136a&at=AIrpjvMPgEsT90xJ09bmQ8k1JnCa:1738635408615"><button id="baixarXML">Baixar XML's</button></a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("loginForm").classList.add("hidden");
+            document.getElementById("selecionarEmpresa").classList.remove("hidden");
+        });
+
+        document.getElementById("continuarEmpresa").addEventListener("click", function() {
+            document.getElementById("selecionarEmpresa").classList.add("hidden");
+            document.getElementById("menuPrincipal").classList.remove("hidden");
+        });
+
+        document.getElementById("estoque").addEventListener("click", function() {
+            document.getElementById("menuPrincipal").classList.add("hidden");
+            document.getElementById("estoqueOpcoes").classList.remove("hidden");
+        });
+
+        document.getElementById("baixarXMLPage").addEventListener("click", function() {
+            document.getElementById("estoqueOpcoes").classList.add("hidden");
+            document.getElementById("baixarXMLPageView").classList.remove("hidden");
+        });
+    </script>
+</body>
+</html>
